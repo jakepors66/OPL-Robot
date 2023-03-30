@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>OPL Robot UI</title>
+	</head>
+	<body>
+	
+	<h2> <i> OPL Robot | Main User Interface </i> </h2>
+	<h5> <i> Senior Design Project for Operator Performance Laboratory </i> </h5>
+	<div class="status-light">
+    <!-- Status light -->
+    <div class="status-light__status"></div>
+
+    <!-- Content -->
+    <div class="status-light__content">Online Status</div>
+</div>
+    <div id="zone_joystick">
+</div>
+    <br>
+    <br>
+	<button id="FWD" class="robot">FORWARD &#x2191</button> 
+    <br>
+    <br>
+	<button id="LFT" class="robot">LEFT &#x2190</button> 
+	<button id="RGT" class="robot">RIGHT &#x2192</button> 
+    <br> 
+    <br>
+	<button id="REV" class="robot">REVERSE &#x2193</button> 
+    <br>
+    <br>
+    <br>
+    <br>
+	<button id="STP" class="robot">STOP &#x23F9</button> 
+    <br>
+    <br>
+    <a href="https://zoom.us/join">Join Zoom Meeting</a>
+   <img 
+    <br>
+    <br>
+    <a href="https://www.microsoft.com/en-us/microsoft-teams/log-in">Log in to Microsoft Teams</a>
+		
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$(".robot").click(function()
+			{
+				var cmd = $(this).attr('id'); 
+				$.get("http://10.0.2.15/", {robot:cmd}); 
+			});
+		});
+	</script>
+	</body>
+</html>
